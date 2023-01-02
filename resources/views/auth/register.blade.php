@@ -4,7 +4,7 @@
     <div class="col-md-6">
         <div class="card mb-4 mx-4">
             <div class="card-body p-4">
-                <h1>Register</h1>
+                <h1>Cadastrar</h1>
 
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
@@ -13,7 +13,7 @@
                     <svg class="icon">
                       <use xlink:href="{{ asset('icons/coreui.svg#cil-user') }}"></use>
                     </svg></span>
-                        <input class="form-control" type="text" name="name" placeholder="{{ __('Name') }}" required
+                        <input class="form-control" type="text" name="name" placeholder="{{ __('Nome') }}" required
                                autocomplete="name" autofocus>
                         @error('name')
                         <span class="invalid-feedback">
@@ -26,7 +26,7 @@
                     <svg class="icon">
                       <use xlink:href="{{ asset('icons/coreui.svg#cil-envelope-open') }}"></use>
                     </svg></span>
-                        <input class="form-control" type="text" name="email" placeholder="{{ __('Email') }}" required
+                        <input class="form-control" type="text" name="email" placeholder="{{ __('E-mail') }}" required
                                autocomplete="email">
                         @error('email')
                         <span class="invalid-feedback">
@@ -40,7 +40,7 @@
                       <use xlink:href="{{ asset('icons/coreui.svg#cil-lock-locked') }}"></use>
                     </svg></span>
                         <input class="form-control @error('password') is-invalid @enderror" type="password"
-                               name="password" placeholder="{{ __('Password') }}" required autocomplete="new-password">
+                               name="password" placeholder="{{ __('Senha') }}" required autocomplete="new-password">
                         @error('password')
                         <span class="invalid-feedback">
                             {{ $message }}
@@ -53,11 +53,11 @@
                       <use xlink:href="{{ asset('icons/coreui.svg#cil-lock-locked') }}"></use>
                     </svg></span>
                         <input class="form-control @error('password_confirmation') is-invalid @enderror" type="password"
-                               name="password_confirmation" placeholder="{{ __('Confirm Password') }}" required
+                               name="password_confirmation" placeholder="{{ __('Confirmar senha') }}" required
                                autocomplete="new-password">
                     </div>
 
-                    <button class="btn btn-block btn-success" type="submit">{{ __('Register') }}</button>
+                    <button class="btn btn-block btn-success" type="submit">{{ __('Criar conta') }}</button>
 
                 </form>
             </div>

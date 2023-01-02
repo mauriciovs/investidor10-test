@@ -3,7 +3,7 @@
 @section('content')
     <div class="card mb-4">
         <div class="card-header">
-            {{ __('My profile') }}
+            {{ __('Meus dados') }}
         </div>
 
         <form action="{{ route('profile.update') }}" method="POST">
@@ -20,7 +20,7 @@
                     <svg class="icon">
                       <use xlink:href="{{ asset('icons/coreui.svg#cil-user') }}"></use>
                     </svg></span>
-                    <input class="form-control" type="text" name="name" placeholder="{{ __('Name') }}"
+                    <input class="form-control" type="text" name="name" placeholder="{{ __('Nome') }}"
                            value="{{ old('name', auth()->user()->name) }}" required>
                     @error('name')
                     <span class="invalid-feedback">
@@ -33,7 +33,7 @@
                     <svg class="icon">
                       <use xlink:href="{{ asset('icons/coreui.svg#cil-envelope-open') }}"></use>
                     </svg></span>
-                    <input class="form-control" type="text" name="email" placeholder="{{ __('Email') }}"
+                    <input class="form-control" type="text" name="email" placeholder="{{ __('E-mail') }}"
                            value="{{ old('email', auth()->user()->email) }}" required>
                     @error('email')
                     <span class="invalid-feedback">
@@ -47,7 +47,7 @@
                       <use xlink:href="{{ asset('icons/coreui.svg#cil-lock-locked') }}"></use>
                     </svg></span>
                     <input class="form-control @error('password') is-invalid @enderror" type="password"
-                           name="password" placeholder="{{ __('New password') }}" required>
+                           name="password" placeholder="{{ __('Nova senha') }}" required>
                     @error('password')
                     <span class="invalid-feedback">
                             {{ $message }}
@@ -60,13 +60,13 @@
                       <use xlink:href="{{ asset('icons/coreui.svg#cil-lock-locked') }}"></use>
                     </svg></span>
                     <input class="form-control @error('password_confirmation') is-invalid @enderror" type="password"
-                           name="password_confirmation" placeholder="{{ __('New password confirmation') }}" required>
+                           name="password_confirmation" placeholder="{{ __('Confirmação da nova senha') }}" required>
                 </div>
 
             </div>
 
             <div class="card-footer">
-                <button class="btn btn-sm btn-primary" type="submit">{{ __('Submit') }}</button>
+                <button class="btn btn-sm btn-primary" type="submit">{{ __('Atualizar') }}</button>
             </div>
 
         </form>

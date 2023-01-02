@@ -4,7 +4,7 @@
     <div class="col-md-6">
         <div class="card mb-4 mx-4">
             <div class="card-body p-4">
-                <h1>{{ __('Reset Password') }}</h1>
+                <h1>{{ __('Alterar senha') }}</h1>
                 <form action="{{ route('password.email') }}" method="POST">
                     @csrf
                     @if(session('status'))
@@ -19,7 +19,7 @@
                       <use xlink:href="{{ asset('icons/coreui.svg#cil-envelope-open') }}"></use>
                     </svg></span>
                         <input class="form-control @error('email') is-invalid @enderror" type="email"
-                               id="email" name="email" placeholder="{{ __('Email') }}">
+                               id="email" name="email" placeholder="{{ __('E-mail') }}">
                         @error('email')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -27,7 +27,7 @@
                         @enderror
                     </div>
                     <button class="btn btn-block btn-success"
-                            type="submit">{{ __('Send Password Reset Link') }}</button>
+                            type="submit">{{ __('Enviar link para resetar senha') }}</button>
                 </form>
             </div>
         </div>

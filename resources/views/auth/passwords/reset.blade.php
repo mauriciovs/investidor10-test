@@ -4,7 +4,7 @@
     <div class="col-md-6">
         <div class="card mb-4 mx-4">
             <div class="card-body p-4">
-                <h1>{{ __('Reset Password') }}</h1>
+                <h1>{{ __('Alterar senha') }}</h1>
 
                 <form action="{{ route('password.update') }}" method="POST">
                     @csrf
@@ -14,7 +14,7 @@
                       <use xlink:href="{{ asset('icons/coreui.svg#cil-envelope-open') }}"></use>
                     </svg></span>
                         <input class="form-control @error('email') is-invalid @enderror" type="text"
-                               placeholder="{{ __('Email') }}">
+                               placeholder="{{ __('E-mail') }}">
                         @error('email')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -28,7 +28,7 @@
                       </svg></span>
                         <input class="form-control @error('password') is-invalid @enderror" type="password"
                                id="password" name="password"
-                               placeholder="{{ __('Password') }}">
+                               placeholder="{{ __('Senha') }}">
                         @error('password')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -42,7 +42,7 @@
                       </svg></span>
                         <input class="form-control @error('password_confirmation') is-invalid @enderror" type="password"
                                id="password_confirmation" name="password_confirmation"
-                               placeholder="{{ __('Confirm Password') }}">
+                               placeholder="{{ __('Confirmar senha') }}">
                         @error('password_confirmation')
                         <div class="invalid-feedback">
                             {{ $message }}
