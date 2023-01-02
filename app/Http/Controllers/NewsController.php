@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewsStoreRequest;
 use App\Models\News;
 use Illuminate\Http\Request;
 
@@ -40,14 +41,8 @@ class NewsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NewsStoreRequest $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'content' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);;
-
         $newImage = null;
         if ($image = $request->file('image')) {
             $destinationPath = 'images/';
@@ -86,12 +81,8 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(NewsStoreRequest $request, News $news)
     {
-        $request->validate([
-            'title' => 'required',
-            'content' => 'required'
-        ]);
 
         $newImage = null;
         if ($image = $request->file('image')) {
