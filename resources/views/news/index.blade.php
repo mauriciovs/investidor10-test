@@ -7,6 +7,13 @@
         </div>
 
         <div class="card-body">
+            <a href="{{ route('news.create') }}" class="btn btn-primary" role="button">Cadastrar notícia</a>
+
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+            @endif
 
             <table class="table">
                 <thead>
@@ -17,15 +24,20 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($users as $user)
+                @foreach($news as $item)
                     <tr>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
+                        <td>{{ $item->title }}</td>
+                        <td>{{ $item->created_at }}</td>
                         <td>
-                            <a href="#" class="btn btn-primary" role="button" data-coreui-toggle="button">Atualizar</a>
-                            <a href="#" class="btn btn-primary" role="button" data-coreui-toggle="button">Deletar</a>
-                        </td>
-                    </tr>
+                            <form action="{{ route('news.destroy',$item->id) }}" method="POST">
+                                <a href="{{ route('news.edit',$item->id) }}" class="btn btn-primary" role="button">Atualizar</a>
+
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Deletar</button>
+                                    </td>
+                                </tr>
+                            </form>
                 @endforeach
                 </tbody>
             </table>
@@ -33,7 +45,7 @@
         </div>
 
         <div class="card-footer">
-            {{ $users->links() }}
+            {{ $news->links() }}
         </div>
     </div>
 @endsection

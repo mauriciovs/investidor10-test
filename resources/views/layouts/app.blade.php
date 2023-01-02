@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <base href="./">
     <meta charset="utf-8">
@@ -52,7 +52,7 @@
                             <svg class="icon me-2">
                                 <use xlink:href="{{ asset('icons/coreui.svg#cil-user') }}"></use>
                             </svg>
-                            {{ __('My profile') }}
+                            {{ __('Meus dados') }}
                         </a>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -61,7 +61,7 @@
                                 <svg class="icon me-2">
                                     <use xlink:href="{{ asset('icons/coreui.svg#cil-account-logout') }}"></use>
                                 </svg>
-                                {{ __('Logout') }}
+                                {{ __('Sair') }}
                             </a>
                         </form>
                     </div>
